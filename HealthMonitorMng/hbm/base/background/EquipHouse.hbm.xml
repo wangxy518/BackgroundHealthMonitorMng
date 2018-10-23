@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="onesun.hbm.base.background.EquipHouse" table="EquipHouse">
+		<id name="dataId" type="string">
+			<column name="dataId" />
+			<generator class="uuid"></generator>
+		</id>
+		<property name="equipId" type="string">
+		  <column name="equipId" length="40"></column>
+		</property>
+		<property name="houseId" type="string">
+		 <column name="houseId" length="40"></column>
+		</property>
+
+	</class>
+</hibernate-mapping>

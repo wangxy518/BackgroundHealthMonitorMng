@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="onesun.hbm.base.background.EquipmentImage" table="EquipmentImage">
+		<id name="dataId" type="string">
+			<column name="dataId" />
+			<generator class="uuid"></generator>
+		</id>
+		<property name="equipmentId" type="string">
+		  <column name="equipmentId" length="50"></column>
+		</property>
+		<property name="image" type="string">
+		 <column name="image" length="50"></column>
+		</property>
+		<property name="imageNumber" type="string">
+		 <column name="imageNumber" length="1"></column>
+		</property>
+		<many-to-one name="equipment" column="equipmentId" class="onesun.hbm.base.background.Equipment"  
+             lazy="false" insert="false" update="false"  cascade="save-update,persist"/>
+	</class>
+</hibernate-mapping>

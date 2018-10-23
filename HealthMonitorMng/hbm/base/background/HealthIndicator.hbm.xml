@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="onesun.hbm.base.background.HealthIndicator" table="HealthIndicator">
+		<id name="id" type="string">
+			<column name="id" />
+			<generator class="uuid"></generator>
+		</id>
+		<property name="indicator" type="string">
+		  <column name="indicator" length="20"></column>
+		</property>
+		<property name="description" type="string">
+		 <column name="description" length="255"></column>
+		</property>
+		<property name="abbreviate" type="string">
+		 <column name="abbreviate" length="20"></column>
+		</property>
+		<property name="createTime" type="string">
+		  <column name="createTime" ></column>
+		</property>
+	</class>
+</hibernate-mapping>

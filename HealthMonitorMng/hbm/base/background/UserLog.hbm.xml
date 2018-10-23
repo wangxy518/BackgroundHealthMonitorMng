@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="onesun.hbm.base.background.UserLog" table="UserLog">
+		<id name="logId" type="string">
+			<column name="logId" />
+			<generator class="uuid"></generator>
+		</id>
+		<property name="active" type="string">
+		  <column name="active" length="20"></column>
+		</property>
+		<property name="time" type="timestamp">
+		 <column name="time" sql-type="timestamp"></column>
+		</property>
+		<property name="content" type="string">
+		 <column name="content" length="20"></column>
+		</property>
+		<property name="detail" type="string">
+		 <column name="detail" length="255"></column>
+		</property>
+		<property name="userName" type="string">
+		 <column name="userName" length="255"></column>
+		</property>
+		<property name="loginIp" type="string">
+		 <column name="loginIp" length="40"></column>
+		</property>
+		<property name="operationIp" type="string">
+		 <column name="operationIp" length="40"></column>
+		</property>
+	</class>
+</hibernate-mapping>

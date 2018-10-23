@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="onesun.hbm.base.background.BasicData.BasicData" table="BasicData">
+		<id name="dataId" type="string">
+			<column name="dataId" />
+			<generator class="uuid"></generator>
+		</id>
+		<property name="organizationRealName" type="string">
+		  <column name="organizationRealName" length="40"></column>
+		</property>
+		<property name="organizationName" type="string">
+		 <column name="organizationName" length="40"></column>
+		</property>
+		<property name="code" type="string">
+		 <column name="code" length="20"></column>
+		</property>
+		<property name="detectObject" type="string">
+		 <column name="detectObject" length="30"></column>
+		</property>
+		<property name="belongLocation" type="string">
+		 <column name="belongLocation" length="30"></column>
+		</property>
+		<property name="keepNumberOne" type="string">
+		 <column name="keepNumberOne" length="20"></column>
+		</property>
+		<property name="keepNumbertwo" type="string">
+		 <column name="keepNumbertwo" length="20"></column>
+		</property>
+	</class>
+</hibernate-mapping>

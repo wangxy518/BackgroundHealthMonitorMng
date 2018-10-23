@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="onesun.hbm.base.background.Equipment" table="Equipment">
+		<id name="dataId" type="string">
+			<column name="dataId" />
+			<generator class="uuid"></generator> 
+		</id>
+		<property name="equipmentNumber" type="string">
+		  <column name="equipmentNumber" length="30"></column>
+		</property>
+		<property name="equipmentName" type="string">
+		 <column name="equipmentName" length="20"></column>
+		</property>
+		<property name="status" type="string">
+		  <column name="status" length="10"></column>
+		</property>
+		<property name="belongLocation" type="string">
+		  <column name="belongLocation" length="40"></column>
+		</property>
+		<property name="application" type="string">
+		  <column name="application" length="20"></column>
+		</property>
+		<property name="ventor" type="string">
+		  <column name="ventor" length="30"></column>
+		</property>
+		<property name="describle" type="string">
+		  <column name="describle" length="255"></column>
+		</property>
+		<property name="instruction" type="string">
+		  <column name="instruction" length="255"></column>
+		</property>
+		<property name="logo" type="string">
+		  <column name="logo" length="255"></column>
+		</property>
+		<property name="img" type="string">
+		  <column name="img" length="255"></column>
+		</property>
+		<!-- <one-to-one name="equipHouse" property-ref="equipId" class="onesun.hbm.base.background.EquipHouse"/> -->
+		<!-- <many-to-one name="healthHouse" class="onesun.hbm.base.background.HealthHouse" column="XYH" insert="false" update="false" lazy="false" not-found="ignore"/> -->
+		<set name="healthHouses" table="EquipHouse" >
+        	<key column="equipId"></key>
+        	<many-to-many class="onesun.hbm.base.background.HealthHouse" column="houseId" />
+		</set>
+		<!-- <set name="EquipmentImage" table="EquipmentImage" >
+        	<key column="dataId"></key>
+        	<many-to-many class="onesun.hbm.base.background.EquipmentImage" column="equipmentId" />
+		</set> -->
+		 <set name="equipmentImage" inverse="true">
+            <key>
+                <column name="equipmentId" length="50" />
+            </key>
+            <one-to-many class="onesun.hbm.base.background.EquipmentImage" />
+        </set>
+	</class>
+</hibernate-mapping>
